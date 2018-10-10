@@ -1,0 +1,97 @@
+page-home {
+
+  .bg {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(160deg, #ffd800 30%, #0026ff 70%);
+  }
+
+  .head {
+    position: absolute;
+    display: block;
+    color: #fff;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  .head h1 {
+    font-size: 9vh !important;
+    font-weight: lighter !important;
+    font-family: 'Bafora Demo', cursive;
+  }
+
+  .inputs {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    color: #fff;
+    opacity: 0.6;
+  }
+
+  ion-item {
+    background: transparent !important;
+    border: 1px solid #fff !important;
+
+    ion-input {
+      color: #fff;
+    }
+
+    ion-label {
+      color: #fff !important;
+    }
+
+    .item-inner {
+      border: 0 !important;
+    }
+  }
+
+  button {
+    position: absolute;
+    display: block;
+    top: 50%;
+    background: #fff !important;
+    border: 1px solid #fff;
+    box-shadow: 0px;
+    color: #9A9595 !important;
+  }
+}
+
+#custom-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  background-color: #222;
+}
+
+.flb {
+  background-color: #3ebffb;
+  height: 100%;
+  width: 100%;
+  animation: pulse 1s linear forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+

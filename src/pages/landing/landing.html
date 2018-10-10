@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle icon-only>
+
+      <ion-icon name='menu'></ion-icon>
+
+    </button>
+
+    <ion-title>
+
+      Menus
+
+    </ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding> 
+
+  <button ion-button  menuToggle>Toggle Menu</button>
+
+</ion-content> 
+
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(DepartmentPage)">
+        Department
+      </button>
+      <button ion-item (click)="openPage(SchedulePage)">
+        Faculty
+      </button>
+      <button ion-item (click)="openPage(HoursPage)">
+        Faculty Schedule
+      </button>
+      <button ion-item (click)="openPage()">
+        Faculty Office Hours
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
