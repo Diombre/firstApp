@@ -3,9 +3,15 @@ page-home {
   .bg {
     height: 100%;
     width: 100%;
-    background: linear-gradient(160deg, #ffd800 30%, #0026ff 70%);
+    background: linear-gradient(160deg, #fc0 30%, #001b38 70%);
+ 
   }
-
+  .yellow{
+    background-color: #fc0 !important;
+  }
+  .blue{
+    background-color: #001b38 !important;
+  }
   .head {
     position: absolute;
     display: block;

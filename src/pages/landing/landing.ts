@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, MenuController } from 'ionic-angular';
-
+import { DepartmentPage } from '../department/department';
+import { HomePage } from '../home/home';
+import { FacultyschedulePage } from '../facultyschedule/facultyschedule';
 /**
  * Generated class for the LandingPage page.
  *
@@ -12,121 +14,56 @@ import { IonicPage, NavController, NavParams, App, MenuController } from 'ionic-
 
 
 @Component({
-
+    selector: 'page-home',
     templateUrl: 'landing.html'
 })
 
 export class LandingPage {
 
-  constructor(app: App, menu: MenuController, public navCtrl: NavController, public navParams: NavParams) {
-    menu.enable(true);
+  searchQuery: string = '';
+  items: string[];
+
+  constructor(public navCtrl: NavController, public NavParams: NavParams) {
+    this.initializeItems();
+  }
+  initializeItems() {
+    this.items = [
+      'Bryan',
+      'Williams',
+      'Rosemary',
+      'Roy',
+      'Xue',
+      'Effort'
+    ];
+  }
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+  gotoDepartmentPage(departarpments) {
+    //check in the database
+    console.log(departarpments);
+    this.navCtrl.push(DepartmentPage , {'departmentValue': departarpments});    
+  }
+  
+  gotoFacultySchedule(facultyMember) {
+    //check in the database
+    console.log(facultyMember);
+    this.navCtrl.push(FacultyschedulePage , {'facultyMember': facultyMember});    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LandingPage');
+  gotoAnotherPage(params) {
+    //check in the database
+    this.navCtrl.setRoot(HomePage);
   }
 }
-
-
-@Component({
-
-  template: `
-
-<ion-content padding>
-
-  <button>page one</button>
-
-</ion-content>
-`
-
-})
-
-export class PageOne {
-  constructor(public navCtrl: NavController) {
-  }
-  PageOne(params) {
-    this.navCtrl.push(`
-
-<ion-content padding>
-
-  <button>page one</button>
-
-</ion-content>
-`);
-  }}
-
-
-
-@Component({
-
-  template: `
-
-<ion-header>
-
-  <ion-navbar>
-
-    <button ion-button menuToggle icon-only>
-
-      <ion-icon name='menu'></ion-icon>
-
-    </button>
-
-    <ion-title>
-
-      Friends
-
-    </ion-title>
-
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content padding>
-
-  <button ion-button block menuToggle>Toggle Menu</button>
-
-</ion-content>
-
-`
-
-})
-
-export class PageTwo { }
-
-
-
-@Component({
-
-  template: `
-
-<ion-header>
-
-  <ion-navbar>
-
-    <button ion-button menuToggle icon-only>
-
-      <ion-icon name='menu'></ion-icon>
-
-    </button>
-
-    <ion-title>
-
-      Events
-
-    </ion-title>
-
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content padding>
-
-  <button ion-button block menuToggle>Toggle Menu</button>
-
-</ion-content>
-
-`
-
-})
-
-export class PageThree { }

@@ -1,11 +1,16 @@
 page-landing {
-
+        .yellow{
+          background-color: #fc0 !important;
+        }
+        .blue{
+          background-color: #001b38 !important;
+        }
         .bg {
           height: 100%;
           width: 100%;
           background: linear-gradient(160deg, #ffd800 30%, #0026ff 70%);
         }
-      
+       
         .head {
           position: absolute;
           display: block;
@@ -40,7 +45,10 @@ page-landing {
           ion-input {
             color: #fff;
           }
-      
+          ion-list{
+            background-color: #001b38;
+            color: #fff;
+          }
           ion-label {
             color: #fff !important;
           }
@@ -94,6 +102,9 @@ page-landing {
       .Aligner-item--bottom {
         align-self: flex-end;
       }
-      
+      .slider-size{
+        height: 50%;
+        width: 100%;
+      }
       
             

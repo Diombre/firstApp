@@ -38,9 +38,17 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  blue:       #001b38,
+  yellow:     #fc0
 );
 
+.yellow{
+  background-color: #fc0 !important;
+}
+.blue{
+  background-color: #001b38 !important;
+}
 
 // App iOS Variables
 // --------------------------------------------------
